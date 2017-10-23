@@ -5,11 +5,11 @@ import chat.model.*;
 
 public class ChatController
 {
-	private ChatDisplay display;
+	private PopupDisplay display;
 	
 	public ChatController()
 	{
-		display = new ChatDisplay();
+		display = new PopupDisplay();
 	}
 	
 	public void start()
