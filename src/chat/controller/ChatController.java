@@ -14,6 +14,6 @@ public class ChatController
 	
 	public void start()
 	{
-		
+		display.displayText("asd");
 	}
 }
