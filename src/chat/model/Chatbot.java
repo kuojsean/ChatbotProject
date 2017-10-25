@@ -25,15 +25,23 @@ public class Chatbot
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
 		this.questions = null;
-		this.username = null;
+		this.username = username;
 		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
 		this.topics = null;
-		this.verbs = null;
+		this.verbs = new String [3];
 		this.followUps = null;
 	}
 
+	private void buildverbs()
+	{
+		verbs [0] = "like";
+		verbs [1] = "dislike";
+		verbs [2] = "am ambivalent about";
+		verbs [3] = "am thinking about";
+	}
+	
 	private void buildMovieList()
 	{
 		
