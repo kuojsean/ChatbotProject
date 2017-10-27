@@ -20,21 +20,22 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = null;
+		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
-		this.cuteAnimalMemes = null;
-		this.currentTime = null;
-		this.questions = null;
+		this.cuteAnimalMemes = new ArrayList<String>();
+		this.currentTime = currentTime;
+		this.questions = new String[5];
 		this.username = username;
-		this.content = null;
-		this.intro = null;
-		this.currentTime = null;
-		this.topics = null;
+		this.content = content;
+		this.intro = intro;
+//		this.currentTime = currentTime;
+		this.topics = new String [7];
 		this.verbs = new String [4];
-		this.followUps = null;
+		this.followUps = new String [5];
 		
 		buildVerbs();
 		buildShoppingList();
+		buildTopics();
 	}
 
 	private void buildVerbs()
@@ -47,7 +48,7 @@ public class Chatbot
 	
 	private void buildMovieList()
 	{
-		
+	
 	}
 	
 	private void buildShoppingList()
@@ -55,6 +56,8 @@ public class Chatbot
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
 		shoppingList.add("protein");
+		shoppingList.add("slug bait");
+		shoppingList.add("gross things");
 	}
 	
 	private void buildCuteAnimals()
@@ -65,6 +68,17 @@ public class Chatbot
 	private void buildQuestions()
 	{
 		
+	}
+	
+	private void buildTopics()
+	{
+		topics [0] = "school";
+		topics [1] = "basketball";
+		topics [2] = "fashion";
+		topics [3] = "food";
+		topics [4] = "business";
+		topics [5] = "music";
+		topics [6] = "politics";
 	}
 	
 	public String processConversation(String input)
@@ -146,7 +160,7 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return null;
+		return Questions;
 	}
 	
 	public String[] getVerbs()
@@ -176,12 +190,12 @@ public class Chatbot
 
 	public String getIntro()
 	{
-		return null;
+		return intro;
 	}
 	
 	public LocalTime getCurrentTime()
 	{
-		return null;
+		return currentTime;
 	}
 	
 	public void setUsername(String username)
