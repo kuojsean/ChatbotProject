@@ -83,7 +83,18 @@ public class Chatbot
 	
 	public String processConversation(String input)
 	{
-		return null;
+		String chatbotResponse = "";
+		chatbotResponse += "You said:" + "\n" + input;
+		chatbotResponse += buildChatbotResponse();
+		return chatbotResponse;
+	}
+	
+	private String buildChatbotResponse()
+	{
+		String response = "";
+		
+		
+		return response;
 	}
 	
 	public boolean lengthChecker(String input)
@@ -160,7 +171,7 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return Questions;
+		return questions;
 	}
 	
 	public String[] getVerbs()
