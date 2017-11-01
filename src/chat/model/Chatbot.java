@@ -84,14 +84,23 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
-		chatbotResponse += "You said:" + "\n" + input;
+		chatbotResponse += "You said:" + "\n" + input + "\n";
 		chatbotResponse += buildChatbotResponse();
 		return chatbotResponse;
 	}
 	
 	private String buildChatbotResponse()
 	{
-		String response = "";
+		String response = "I ";
+		int random = (int) (Math.random() * verbs.length);
+		
+		response += verbs[random];
+		
+		random = (int) (Math.random() + topics.length);
+		response += " " + topics[random] + ".\n";
+		
+		random = (int) (Math.random() * questions.length);
+		response += questions[random];
 		
 		
 		return response;
