@@ -24,7 +24,7 @@ public class Chatbot
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
 		this.currentTime = currentTime;
-		this.questions = new String[5];
+		this.questions = new String[10];
 		this.username = username;
 		this.content = content;
 		this.intro = intro;
@@ -36,6 +36,8 @@ public class Chatbot
 		buildVerbs();
 		buildShoppingList();
 		buildTopics();
+		buildQuestions();
+		buildFollowups();
 	}
 
 	private void buildVerbs()
@@ -44,6 +46,16 @@ public class Chatbot
 		verbs [1] = "dislike";
 		verbs [2] = "am ambivalent about";
 		verbs [3] = "am thinking about";
+	}
+	
+	private void buildFollowups()
+	{
+		followUps [0] = "Boi if you don't";
+		followUps [1] = "And the ting goes BRRRRAAAA";
+		followUps [2] = "Take of your jacket... mans not hot";
+		followUps [3] = "2 + 2 = 4 minus 1 that's three quick math";
+		followUps [4] = "Sauce... no ketchup... just sauce";
+				
 	}
 	
 	private void buildMovieList()
@@ -67,7 +79,16 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions [0] = "";
+		questions [1] = "";
+		questions [2] = "";
+		questions [3] = "";
+		questions [4] = "";
+		questions [5] = "";
+		questions [6] = "";
+		questions [7] = "";
+		questions [8] = "";
+		questions [9] = "";
 	}
 	
 	private void buildTopics()
