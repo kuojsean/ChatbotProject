@@ -23,11 +23,11 @@ public class Chatbot
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.currentTime = currentTime;
+		this.currentTime = null;
 		this.questions = new String[10];
 		this.username = username;
-		this.content = content;
-		this.intro = intro;
+		this.content = null;
+		this.intro = null;
 //		this.currentTime = currentTime;
 		this.topics = new String [7];
 		this.verbs = new String [4];
@@ -60,7 +60,7 @@ public class Chatbot
 	
 	private void buildMovieList()
 	{
-	
+
 	}
 	
 	private void buildShoppingList()
@@ -79,8 +79,8 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		questions [0] = "";
-		questions [1] = "";
+		questions [0] = "What do you like to do?";
+		questions [1] = "What's your favorite food?";
 		questions [2] = "";
 		questions [3] = "";
 		questions [4] = "";
@@ -117,7 +117,7 @@ public class Chatbot
 		
 		response += verbs[random];
 		
-		random = (int) (Math.random() + topics.length);
+		random = (int) (Math.random() * topics.length);
 		response += " " + topics[random] + ".\n";
 		
 		random = (int) (Math.random() * questions.length);
