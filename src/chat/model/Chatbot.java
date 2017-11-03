@@ -161,7 +161,14 @@ public class Chatbot
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
-		return false;
+		for(String shoppingCheck: shoppingList)
+		{
+			if (shoppingCheck != shoppingItem)
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public boolean movieTitleChecker(String title)
