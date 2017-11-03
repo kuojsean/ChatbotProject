@@ -81,14 +81,14 @@ public class Chatbot
 	{
 		questions [0] = "What do you like to do?";
 		questions [1] = "What's your favorite food?";
-		questions [2] = "";
-		questions [3] = "";
-		questions [4] = "";
-		questions [5] = "";
-		questions [6] = "";
-		questions [7] = "";
-		questions [8] = "";
-		questions [9] = "";
+		questions [2] = "Who is your favorite actor?";
+		questions [3] = "What's our favorite book?";
+		questions [4] = "What's your favorite sport?";
+		questions [5] = "What's your favorite color?";
+		questions [6] = "What's your favorite song?";
+		questions [7] = "Who is your favorite singer";
+		questions [8] = "What are you doing this weekend?";
+		questions [9] = "Who am I?";
 	}
 	
 	private void buildTopics()
