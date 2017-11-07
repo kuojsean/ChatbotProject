@@ -66,26 +66,32 @@ public class Movie
 
 	public void setGenre(String genre)
 	{
+		this.genre = genre;
 	}
 
 	public void setRatingMPAA(String ratingMPAA)
 	{
+		this.ratingMPAA = ratingMPAA;
 	}
 
 	public void setReview(String review)
 	{
+		this.review = review;
 	}
 
 	public void setLength(int length)
 	{
+		this.length = length;
 	}
 
 	public void setReleaseDate(LocalDate releaseDate)
 	{
+		this.releaseDate = releaseDate;
 	}
 
 	public void setStarScore(double starScore)
 	{
+		this.starScore = starScore;
 	}
 	
 	public String toString()
