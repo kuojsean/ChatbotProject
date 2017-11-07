@@ -141,6 +141,10 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
+//		boolean answer = false;//valid answer
+//		
+//		for(String htmlTagCheck : testedChatbot);
+//		if(htmlTag !=)
 		return false;
 	}
 	
@@ -154,8 +158,15 @@ public class Chatbot
 		return false;
 	}
 	
-	public boolean cuteAnimalMemeChecker(String input)
+	public boolean cuteAnimalMemeChecker(String cuteAnimalMemeItem)
 	{
+		for(String cuteAnimalCheck : cuteAnimalMemes)
+		{
+			if (cuteAnimalMemeItem.contains(cuteAnimalCheck))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	
@@ -163,12 +174,12 @@ public class Chatbot
 	{
 		for(String shoppingCheck: shoppingList)
 		{
-			if (shoppingCheck != shoppingItem)
+			if (shoppingItem.contains(shoppingCheck))
 			{
-				return false;
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public boolean movieTitleChecker(String title)
