@@ -14,13 +14,13 @@ public class Movie
 	
 	public Movie(String title)
 	{
-		this.title = "";
-		this.genre = null;
-		this.ratingMPAA = null;
-		this.review = null;
-		this.length = -99;
+		this.title = "Title: " + title;
+		this.genre = "Comedy";
+		this.ratingMPAA = "R";
+		this.review = "This is the best movie ever! XD";
+		this.length = 120;
 		this.releaseDate = null;
-		this.starScore = Double.NaN;
+		this.starScore = 9.99;
 	}
 
 	public String getTitle()
@@ -36,7 +36,7 @@ public class Movie
 
 	public String getRatingMPAA()
 	{
-		return null;
+		return ratingMPAA;
 	}
 
 	public String getReview()
@@ -46,7 +46,7 @@ public class Movie
 
 	public int getLength()
 	{
-		return -99999999;
+		return length;
 	}
 
 	public LocalDate getReleaseDate()
@@ -61,6 +61,7 @@ public class Movie
 
 	public void setTitle(String title)
 	{
+		this.title = title;
 	}
 
 	public void setGenre(String genre)
