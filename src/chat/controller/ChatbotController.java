@@ -8,11 +8,15 @@ public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
+	private ChatFrame appFrame;
 	
 	public ChatbotController()
 	{
+		//Initialize the Models
 		chatbot = new Chatbot("Sean Kuo");
+		//Then Initialize the Views After the Model
 		display = new PopupDisplay();
+		appFrame = new ChatFrame(this);
 	}
 	
 	public void start()
