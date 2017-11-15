@@ -41,7 +41,13 @@ public class ChatPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.SOUTH, responseButton, -33, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, responseButton, 0, SpringLayout.EAST, chatTexts);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatTexts, 20, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatTexts, 25, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatTexts, -25, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, userInput, 0, SpringLayout.NORTH, responseButton);
+		baseLayout.putConstraint(SpringLayout.WEST, userInput, 0, SpringLayout.WEST, chatTexts);
 	}
 	
 	private void setupListeners()
