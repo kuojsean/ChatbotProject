@@ -32,7 +32,11 @@ public class ChatPanel extends JPanel
 	
 	private void setupPanel()
 	{
-		
+		this.setBackground(Color.RED);
+		this.setLayout(baseLayout);
+		this.add(responseButton);
+		this.add(chatTexts);
+		this.add(userInput);
 	}
 	
 	private void setupLayout()
