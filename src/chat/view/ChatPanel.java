@@ -17,10 +17,13 @@ public class ChatPanel extends JPanel
 	{
 		super();
 		this.appController = appController;
+		
+		//Initialize GUI Data Members
+		
 		responseButton = new JButton ("Say");
 		baseLayout = new SpringLayout();
-		chatTexts = new JTextArea();
-		userInput = new JTextField();
+		chatTexts = new JTextArea(10,25);
+		userInput = new JTextField(25);
 		
 		setupPanel();
 		setupLayout();
