@@ -38,6 +38,7 @@ public class Chatbot
 		buildTopics();
 		buildQuestions();
 		buildFollowups();
+		buildMovieList();
 	}
 
 	private void buildVerbs()
@@ -60,16 +61,21 @@ public class Chatbot
 	
 	private void buildMovieList()
 	{
-		Movie inception = new Movie("Inception");
-		Movie theLegoMovie = new Movie("The Lego Movie");
-		Movie interstellar = new Movie("Interstellar");
-		Movie kingsman = new Movie("Kingsman");
-		Movie tropicThunder = new Movie("Tropic Thunder");
-		movieList.add(inception);
-		movieList.add(theLegoMovie);
-		movieList.add(interstellar);
-		movieList.add(kingsman);
-		movieList.add(tropicThunder);
+		movieList.add(new Movie("Inception"));
+		movieList.add(new Movie("The Lego Movie"));
+		movieList.add(new Movie("Interstellar"));
+		movieList.add(new Movie("Kingsman"));
+		movieList.add(new Movie("Tropic Thunder"));
+//		Movie inception = new Movie("Inception");
+//		Movie theLegoMovie = new Movie("The Lego Movie");
+//		Movie interstellar = new Movie("Interstellar");
+//		Movie kingsman = new Movie("Kingsman");
+//		Movie tropicThunder = new Movie("Tropic Thunder");
+//		movieList.add(inception);
+//		movieList.add(theLegoMovie);
+//		movieList.add(interstellar);
+//		movieList.add(kingsman);
+//		movieList.add(tropicThunder);
 	}
 	
 	private void buildShoppingList()
