@@ -2,6 +2,7 @@ package chat.view;
 
 import javax.swing.*;
 import chat.controller.*;
+import java.awt.event.*;
 import java.awt.*;
 
 
@@ -37,6 +38,8 @@ public class ChatPanel extends JPanel
 		this.add(responseButton);
 		this.add(chatTexts);
 		this.add(userInput);
+		chatTexts.setEnabled(false);
+		chatTexts.setEditable(false);
 	}
 	
 	private void setupLayout()
@@ -52,7 +55,16 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		responseButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userText = userInput.getText();
+				String displayText = appController.interactWithChatbot(userText);
+				chatTexts.append(displayText);
+				userInput.setText("");
+			}
+		});
 	}
 	
 }
