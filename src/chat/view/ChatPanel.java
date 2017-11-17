@@ -26,6 +26,8 @@ public class ChatPanel extends JPanel
 		baseLayout = new SpringLayout();
 		chatTexts = new JTextArea(10,25);
 		userInput = new JTextField(25);
+		checkerButton = new JButton("Check");
+
 		
 		setupPanel();
 		setupLayout();
@@ -37,6 +39,7 @@ public class ChatPanel extends JPanel
 		this.setBackground(Color.RED);
 		this.setLayout(baseLayout);
 		this.add(responseButton);
+		this.add(checkerButton);
 		this.add(chatTexts);
 		this.add(userInput);
 		chatTexts.setEnabled(false);
@@ -52,6 +55,9 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, chatTexts, -25, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, userInput, 0, SpringLayout.NORTH, responseButton);
 		baseLayout.putConstraint(SpringLayout.WEST, userInput, 0, SpringLayout.WEST, chatTexts);
+		baseLayout.putConstraint(SpringLayout.WEST, checkerButton, 0, SpringLayout.WEST, responseButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, checkerButton, 20, SpringLayout.SOUTH, responseButton);
+		baseLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, responseButton);
 	}
 	
 	private void setupListeners()
