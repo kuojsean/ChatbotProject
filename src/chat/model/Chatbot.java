@@ -60,7 +60,16 @@ public class Chatbot
 	
 	private void buildMovieList()
 	{
-
+		Movie inception = new Movie("Inception");
+		Movie theLegoMovie = new Movie("The Lego Movie");
+		Movie interstellar = new Movie("Interstellar");
+		Movie kingsman = new Movie("Kingsman");
+		Movie tropicThunder = new Movie("Tropic Thunder");
+		movieList.add(inception);
+		movieList.add(theLegoMovie);
+		movieList.add(interstellar);
+		movieList.add(kingsman);
+		movieList.add(tropicThunder);
 	}
 	
 	private void buildShoppingList()
