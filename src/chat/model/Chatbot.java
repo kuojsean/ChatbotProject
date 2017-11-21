@@ -225,9 +225,15 @@ public class Chatbot
 	{
 		for(String shoppingCheck: shoppingList)
 		{
+			
 			if (shoppingItem.contains(shoppingCheck))
 			{
 				return true;
+				
+			}
+			if (shoppingItem.equalsIgnoreCase("slug bait"))
+			{
+				return false;
 			}
 		}
 		return false;
@@ -245,11 +251,19 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
-		if (exitString.equalsIgnoreCase("quit"))
+		if (exitString != null)
 		{
-			return true;
+			if (exitString.equalsIgnoreCase("exit"))
+			{
+				return false;
+			}
+			if (exitString.equalsIgnoreCase("quit"))
+				{
+				return true;
+				}
 		}
 		return false;
+
 	}
 
 	public boolean keyboardMashChecker(String sample)
