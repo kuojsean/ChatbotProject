@@ -180,7 +180,28 @@ public class Chatbot
 	
 	public boolean userNameChecker(String input)
 	{
-		return false;
+		boolean validUserName = false;
+		int atCount = 0;
+		if(input != null)
+		{
+			if (input.startsWith("@"))
+			{
+			validUserName = true;
+				for(int i = 0; i < input.length(); i++)
+				{
+					if (input.charAt(i) == '@')
+					{
+						atCount++;
+					}
+					if (atCount >= 2)
+					{
+						validUserName = false;
+					}
+				}
+			}	
+		}		
+		
+		return validUserName;
 	}
 	
 	public boolean contentChecker(String contentCheck)

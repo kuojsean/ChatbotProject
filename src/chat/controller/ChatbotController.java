@@ -59,35 +59,31 @@ public class ChatbotController
 		}
 		if(chatbot.cuteAnimalMemeChecker(text))
 		{
-			response += "";
+			response += "This text has a cute animal meme!\n ";
 		}
 		if(chatbot.htmlTagChecker(text))
 		{
-			response += "";
+			response += "This text has some sort of HTML Tag\n";
 		}
 		if(chatbot.userNameChecker(text))
 		{
-			response += "";
-		}
-		if(chatbot.contentChecker(text))
-		{
-			response += "";
+			response += "This has a valid username in it\n";
 		}
 		if(chatbot.shoppingListChecker(text))
 		{
-			response += "";
+			response += "This text has an item off the shopping list\n";
 		}
 		if(chatbot.movieTitleChecker(text))
 		{
-			response += "";
+			response += "This text is a title from our Movie List\n";
 		}
 		if(chatbot.movieGenreChecker(text))
 		{
-			response += "";
+			response += "This text is a genre of a movie\n";
 		}
 		if(chatbot.keyboardMashChecker(text))
 		{
-			response += "";
+			response += "We detected a keyboard mash\n";
 		}
 		// continue with all checkers except length and quit checker
 		
