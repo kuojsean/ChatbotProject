@@ -61,6 +61,34 @@ public class ChatbotController
 		{
 			response += "";
 		}
+		if(chatbot.htmlTagChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.userNameChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.contentChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.shoppingListChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.movieTitleChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.movieGenreChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.keyboardMashChecker(text))
+		{
+			response += "";
+		}
 		// continue with all checkers except length and quit checker
 		
 		return response;
