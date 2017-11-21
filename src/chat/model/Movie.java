@@ -2,6 +2,13 @@ package chat.model;
 
 import java.time.LocalDate;
 
+/**
+ * This is the movie builder of chatbot.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
+
 public class Movie
 {
 	private String title;

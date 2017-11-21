@@ -9,7 +9,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import chat.model.Movie;
-
+/**
+ * This is the testing for the movie class.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
 public class MovieTest
 {
 	private Movie testedMovie;

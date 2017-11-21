@@ -9,7 +9,12 @@ import org.junit.Test;
 import chat.controller.ChatbotController;
 import chat.view.ChatFrame;
 import chat.view.ChatPanel;
-
+/**
+ * This is the testing for the frame class.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
 public class FrameTest
 {
 	private ChatFrame testedFrame;

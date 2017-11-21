@@ -2,7 +2,12 @@ package chat.view;
 
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-
+/**
+ * This is the JOptionPane subclass of chatbot.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
 public class PopupDisplay
 {
 	private ImageIcon icon;

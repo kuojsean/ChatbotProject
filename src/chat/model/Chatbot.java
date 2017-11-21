@@ -4,6 +4,12 @@ import java.util.List;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+/**
+ * This is the builder of chatbot.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
 public class Chatbot
 {
 	private List<Movie> movieList;

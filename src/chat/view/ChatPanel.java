@@ -5,7 +5,12 @@ import chat.controller.*;
 import java.awt.event.*;
 import java.awt.*;
 
-
+/**
+ * The JPanel subclass for the chatbot project.
+ * @author Sean Kuo
+ * @version 21/11/17
+ * 
+ */
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
@@ -72,6 +77,17 @@ public class ChatPanel extends JPanel
 				userInput.setText("");
 			}
 		});
+		
+		checkerButton.addActionListener(new ActionListener()
+				{
+					public void actionPerformed(ActionEvent click)
+					{
+						String userText = userInput.getText();
+						String displayText = appController.useCheckers(userText);
+						chatTexts.append(displayText);
+						userInput.setText("");
+					}
+				});
 	}
 	
 }

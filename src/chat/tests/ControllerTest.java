@@ -10,7 +10,12 @@ import chat.controller.ChatbotController;
 import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
-
+/**
+ * This is the testing for the controller class.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
 public class ControllerTest
 {
 	private ChatbotController testedController;

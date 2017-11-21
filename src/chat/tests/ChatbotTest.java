@@ -9,7 +9,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import chat.model.Chatbot;
-
+/**
+ * This is the tests for the chatbot class.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
 public class ChatbotTest
 {
 	private Chatbot testedChatbot;

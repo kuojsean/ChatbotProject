@@ -2,7 +2,12 @@ package chat.view;
 
 import chat.controller.ChatbotController;
 import javax.swing.JFrame;
-
+/**
+ * This is the JFrame subclass of chatbot.
+ * @author Sean Kuo
+ * @version 21/11/17
+ *
+ */
 public class ChatFrame extends JFrame
 {
 	private ChatbotController appController;
