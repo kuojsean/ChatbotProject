@@ -19,6 +19,7 @@ public class ChatPanel extends JPanel
 	private JButton checkerButton;
 	private JTextArea chatTexts;
 	private JTextField userInput;
+	private JLabel infoLabel;
 	
 	public ChatPanel(ChatbotController appController)
 	{
@@ -31,6 +32,7 @@ public class ChatPanel extends JPanel
 		baseLayout = new SpringLayout();
 		chatTexts = new JTextArea(10,25);
 		userInput = new JTextField(25);
+		infoLabel = new JLabel("Text to chat with the chatbot");
 		checkerButton = new JButton("Check");
 
 		
@@ -47,6 +49,7 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(chatTexts);
 		this.add(userInput);
+		this.add(infoLabel);
 		chatTexts.setEnabled(false);
 		chatTexts.setEditable(false);
 	}
@@ -63,6 +66,8 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, checkerButton, 0, SpringLayout.WEST, responseButton);
 		baseLayout.putConstraint(SpringLayout.SOUTH, checkerButton, 20, SpringLayout.SOUTH, responseButton);
 		baseLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, responseButton);
+		baseLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, chatTexts);
+		baseLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, userInput); 
 	}
 	
 	private void setupListeners()
