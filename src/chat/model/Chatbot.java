@@ -34,7 +34,7 @@ public class Chatbot
 		this.username = username;
 		this.content = null;
 		this.intro = null;
-//		this.currentTime = currentTime;
+		this.currentTime = LocalTime.now();
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
@@ -339,7 +339,7 @@ public class Chatbot
 	
 	public LocalTime getCurrentTime()
 	{
-		return currentTime;
+			return currentTime;
 	}
 	
 	public void setUsername(String username)
