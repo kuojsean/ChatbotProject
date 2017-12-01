@@ -23,6 +23,7 @@ public class Chatbot
 	private String content;
 	private String intro;
 	private LocalTime currentTime;
+	private String toString;
 	
 	public Chatbot(String username)
 	{
@@ -38,6 +39,7 @@ public class Chatbot
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
+		this.toString = toString;
 		
 		buildVerbs();
 		buildShoppingList();
@@ -187,11 +189,36 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-//		boolean answer = false;//valid answer
-//		
-//		for(String htmlTagCheck : testedChatbot);
-//		if(htmlTag !=)
-		return false;
+		boolean containsHTML = false;
+		if(input == null || !input.contains("<"))
+		{
+			return containsHTML;
+		}
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">",firstOpen);
+		int secondOpen = -9;
+		int secondClose = -9;
+		String tagText = "";
+		
+		//Check bad tags
+		if (input.contains("<>") || input.indexOf("< >") > -1)
+		{
+			containsHTML = false;
+		}
+		//Check singleton
+		if(input.toUpperCase().contains("<P>") || input.toLowerCase().contains("<br>"))
+		{
+			containsHTML = true;
+		}
+		//check others
+		else if (firstClose > firstOpen)
+		{
+			
+			//Others
+			tagText = input.substring(firstOpen + 1, firstClose).toLowerCase();
+			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
+		}
+		return containsHTML;
 	}
 	
 	public boolean userNameChecker(String input)
@@ -280,6 +307,14 @@ public class Chatbot
 		}
 		return false;
 
+	}
+	
+	public String toString()
+	{
+		for(int i = 0; i < toString.length(); i++)
+			if()
+		
+		return toString();
 	}
 
 	public boolean keyboardMashChecker(String sample)
