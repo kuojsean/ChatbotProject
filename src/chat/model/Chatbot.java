@@ -39,7 +39,7 @@ public class Chatbot
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
-		this.toString = toString;
+		this.toString = new String();
 		
 		buildVerbs();
 		buildShoppingList();
@@ -309,13 +309,13 @@ public class Chatbot
 
 	}
 	
-	public String toString()
-	{
-		for(int i = 0; i < toString.length(); i++)
-			if()
-		
-		return toString();
-	}
+//	public String toString()
+//	{
+//		for(int i = 0; i < toString.length(); i++)
+//			if()
+//		
+//		return toString();
+//	}
 
 	public boolean keyboardMashChecker(String sample)
 	{

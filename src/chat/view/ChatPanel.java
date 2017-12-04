@@ -59,7 +59,7 @@ public class ChatPanel extends JPanel
 		this.setLayout(baseLayout);
 		this.add(responseButton);
 		this.add(checkerButton);
-		this.add(chatTexts);
+		this.add(chatScrollPane);
 		this.add(userInput);
 		this.add(infoLabel);
 		chatTexts.setEnabled(false);
@@ -69,16 +69,16 @@ public class ChatPanel extends JPanel
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.SOUTH, responseButton, -33, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, responseButton, 0, SpringLayout.EAST, chatTexts);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatTexts, 20, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatTexts, 25, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, chatTexts, -25, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, responseButton, 0, SpringLayout.EAST, chatScrollPane);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatScrollPane, 20, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatScrollPane, 25, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatScrollPane, -25, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, userInput, 0, SpringLayout.NORTH, responseButton);
-		baseLayout.putConstraint(SpringLayout.WEST, userInput, 0, SpringLayout.WEST, chatTexts);
+		baseLayout.putConstraint(SpringLayout.WEST, userInput, 0, SpringLayout.WEST, chatScrollPane);
 		baseLayout.putConstraint(SpringLayout.WEST, checkerButton, 0, SpringLayout.WEST, responseButton);
 		baseLayout.putConstraint(SpringLayout.SOUTH, checkerButton, 20, SpringLayout.SOUTH, responseButton);
 		baseLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, responseButton);
-		baseLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, chatTexts);
+		baseLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, chatScrollPane);
 		baseLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, userInput); 
 	}
 	
