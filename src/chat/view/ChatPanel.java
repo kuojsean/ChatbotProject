@@ -20,6 +20,8 @@ public class ChatPanel extends JPanel
 	private JTextArea chatTexts;
 	private JTextField userInput;
 	private JLabel infoLabel;
+	//Need a data member  the scrollpane
+	private JScrollPane chatScrollPane;
 	
 	public ChatPanel(ChatbotController appController)
 	{
@@ -34,11 +36,19 @@ public class ChatPanel extends JPanel
 		userInput = new JTextField(25);
 		infoLabel = new JLabel("Text to chat with the chatbot");
 		checkerButton = new JButton("Check");
+		//init the scrollpane
+		chatScrollPane = new JScrollPane();
 
-		
+		//call new helper method
+		setupScrollPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
+	}
+	
+	private void setupScrollPane()
+	{
+		
 	}
 	
 	private void setupPanel()
