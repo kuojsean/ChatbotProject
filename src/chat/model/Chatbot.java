@@ -74,6 +74,8 @@ public class Chatbot
 		movieList.add(new Movie("Interstellar"));
 		movieList.add(new Movie("Kingsman"));
 		movieList.add(new Movie("Tropic Thunder"));
+		movieList.add(new Movie("Thor Ragnorok"));
+		movieList.add(new Movie("Logan"));
 //		Movie inception = new Movie("Inception");
 //		Movie theLegoMovie = new Movie("The Lego Movie");
 //		Movie interstellar = new Movie("Interstellar");
@@ -93,6 +95,13 @@ public class Chatbot
 		shoppingList.add("protein");
 		shoppingList.add("slug bait");
 		shoppingList.add("gross things");
+		shoppingList.add("steak");
+		shoppingList.add("chicken");
+		shoppingList.add("fruit");
+		shoppingList.add("dairy");
+		shoppingList.add("cheese");
+		shoppingList.add("chips");
+		shoppingList.add("hot sauce");
 	}
 	
 	private void buildCuteAnimals()
