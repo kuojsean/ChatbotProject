@@ -42,6 +42,7 @@ public class Chatbot
 		
 		buildVerbs();
 		buildShoppingList();
+		buildCuteAnimals();
 		buildTopics();
 		buildQuestions();
 		buildFollowups();
@@ -96,7 +97,9 @@ public class Chatbot
 	
 	private void buildCuteAnimals()
 	{
-		
+		cuteAnimalMemes.add("otter");
+		cuteAnimalMemes.add("FLOOFER");
+		cuteAnimalMemes.add("kittie");
 	}
 	
 	private void buildQuestions()
@@ -294,7 +297,12 @@ public class Chatbot
 	
 	public boolean movieGenreChecker(String genre)
 	{
-		return false;
+		boolean genreCheck = true;
+		if (genre == "")
+		{
+			genreCheck = false;
+		}
+		return genreCheck;
 	}
 
 	public boolean quitChecker(String exitString)
