@@ -252,7 +252,12 @@ public class Chatbot
 	
 	public boolean contentChecker(String contentCheck)
 	{
-		return true;
+		boolean contentTest = true;
+		if (contentCheck.length() < 6)
+		{
+			contentTest = false;
+		}
+		return contentTest;
 	}
 	
 	public boolean cuteAnimalMemeChecker(String cuteAnimalMemeItem)
