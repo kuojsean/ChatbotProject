@@ -109,6 +109,7 @@ public class Chatbot
 		cuteAnimalMemes.add("otter");
 		cuteAnimalMemes.add("FLOOFER");
 		cuteAnimalMemes.add("kittie");
+		cuteAnimalMemes.add("pupper");
 	}
 	
 	private void buildQuestions()
@@ -229,6 +230,40 @@ public class Chatbot
 			//Others
 			tagText = input.substring(firstOpen + 1, firstClose).toLowerCase();
 			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
+			
+			if(tagText.contains("a href=\""))
+			{
+				if(tagText.indexOf("\"", firstOpen+10) >=0)
+				{
+					
+					String remainder = input.substring(firstClose);
+					if(remainder.indexOf("</a>") >= 0)
+					{
+						containsHTML = true;
+					}
+				}
+			}
+			else if (secondOpen >= 0)
+			{
+				secondClose = input.indexOf(">", secondOpen + tagText.length());
+				String closingTag = input.toLowerCase().substring(secondOpen+2,secondClose);
+				if(secondClose >=0 && closingTag.equals(tagText))
+				{
+					containsHTML = true;
+				}
+				else
+				{
+					containsHTML= false;
+				}
+			}
+			else
+			{
+				containsHTML = false;
+			}
+		}
+		else
+		{
+			containsHTML = false;
 		}
 		return containsHTML;
 	}
