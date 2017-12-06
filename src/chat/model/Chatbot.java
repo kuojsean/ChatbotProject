@@ -30,11 +30,10 @@ public class Chatbot
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.currentTime = null;
 		this.questions = new String[10];
 		this.username = username;
-		this.content = null;
-		this.intro = null;
+		this.content = "Chatbot";
+		this.intro = "";
 		this.currentTime = LocalTime.now();
 		this.topics = new String [7];
 		this.verbs = new String [4];
@@ -285,7 +284,12 @@ public class Chatbot
 	
 	public boolean movieTitleChecker(String title)
 	{
-		return false;
+		boolean titleCheck = true;
+		if (title == "")
+		{
+			titleCheck = false;
+		}
+		return titleCheck;
 	}
 	
 	public boolean movieGenreChecker(String genre)
