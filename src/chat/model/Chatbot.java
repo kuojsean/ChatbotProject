@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * This is the builder of chatbot.
  * @author Sean Kuo
- * @version 21/11/17
+ * @version 11/12/17
  *
  */
 public class Chatbot
