@@ -41,6 +41,14 @@ public class ChatPanel extends JPanel
 		tweetButton = new JButton("tweet", new ImageIcon(getClass().getResource("/chat/view/images/tweet.png")));
 		responseButton = new JButton ("Say");
 		baseLayout = new SpringLayout();
+		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 0, SpringLayout.NORTH, loadButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatButton, 0, SpringLayout.SOUTH, loadButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, searchButton, 0, SpringLayout.NORTH, loadButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, searchButton, 0, SpringLayout.SOUTH, loadButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, saveButton, 0, SpringLayout.NORTH, loadButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, saveButton, 0, SpringLayout.SOUTH, loadButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, loadButton, 5, SpringLayout.SOUTH, tweetButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, loadButton, 55, SpringLayout.SOUTH, tweetButton);
 		chatTexts = new JTextArea(10,25);
 		userInput = new JTextField(25);
 		infoLabel = new JLabel("Text to chat with the chatbot");
@@ -86,10 +94,6 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, chatScrollPane, 20, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatScrollPane, 25, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatScrollPane, -25, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, loadButton, -6, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, saveButton, 0, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, searchButton, 0, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 0, SpringLayout.NORTH, searchButton);
 		baseLayout.putConstraint(SpringLayout.EAST, searchButton, -6, SpringLayout.WEST, saveButton);
 		baseLayout.putConstraint(SpringLayout.EAST, saveButton, -6, SpringLayout.WEST, loadButton);
 		baseLayout.putConstraint(SpringLayout.WEST, loadButton, 0, SpringLayout.WEST, tweetButton);
