@@ -116,7 +116,7 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		responseButton.addActionListener(new ActionListener()
+		chatButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
@@ -137,6 +137,38 @@ public class ChatPanel extends JPanel
 						userInput.setText("");
 					}
 				});
+		
+		tweetButton.addActionListener(new ActionListener()
+				{
+					public void actionPerformed(ActionEvent click)
+					{
+						appController.tweet(userInput.getText());
+					}
+				});
+		
+		searchButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
 	}
 	
 }

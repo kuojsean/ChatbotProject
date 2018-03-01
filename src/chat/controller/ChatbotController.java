@@ -9,16 +9,21 @@ import chat.model.*;
  * @version 21/11/17
  *
  */
+
+
+
 public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame appFrame;
+	private CTECTwitter myTwitter;
 	
 	public ChatbotController()
 	{
 		//Initialize the Models
 		chatbot = new Chatbot("Sean Kuo");
+		myTwitter = new CTECTwitter(this);
 		//Then Initialize the Views After the Model
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
@@ -26,7 +31,8 @@ public class ChatbotController
 	
 	public void start()
 	{
-		display.displayText("Welcome to Beardbot!");
+		IOController.loadFromFile(this, "commonWords.txt");
+//		display.displayText("Welcome to Beardbot!");
 		
 //		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
 //		{
@@ -103,5 +109,20 @@ public class ChatbotController
 		chatbotSays += chatbot.processConversation(chat);
 		
 		return chatbotSays;
+	}
+	
+	public void handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
+	
+	public void tweet (String text)
+	{
+		myTwitter.sendTweet(text);
+	}
+	
+	public String search(String text)
+	{
+		return myTwitter.getMostCommonWord();
 	}
 }
