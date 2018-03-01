@@ -150,7 +150,9 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				String usernameToSearch = userInput.getText();
 				
+				chatTexts.setText(appController.search(usernameToSearch));
 			}
 		});
 		

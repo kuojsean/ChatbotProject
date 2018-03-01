@@ -17,10 +17,15 @@ public class CTECTwitter
 	private ChatbotController appController;
 	private Twitter chatbotTwitter;
 	
+	private List<Status> searchedTweets;
+	private List<String> tweetedWords;
+	
 	public CTECTwitter(ChatbotController appController)
 	{
 		this.appController = appController;
 		this.chatbotTwitter = TwitterFactory.getSingleton();
+		this.tweetedWords = new ArrayList<String>();
+		this.searchedTweets = new ArrayList<Status>();
 	}
 	
 	public void sendTweet(String textToTweet)
@@ -42,6 +47,9 @@ public class CTECTwitter
 	public String getMostCommonWord(String username)
 	{
 		String mostCommon = "";
+		
+		collectTweets(username);
+		
 		return mostCommon;
 	}
 	
