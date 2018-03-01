@@ -123,6 +123,6 @@ public class ChatbotController
 	
 	public String search(String text)
 	{
-		return myTwitter.getMostCommonWord();
+		return myTwitter.getMostCommonWord(text);
 	}
 }
