@@ -19,7 +19,9 @@ public class CTECTwitter
 	
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
-	private int totalWordCount;
+	private long totalWordCount;
+	private HashMap<String, Integer> wordsAndCount;
+	
 	
 	public CTECTwitter(ChatbotController appController)
 	{
@@ -27,6 +29,7 @@ public class CTECTwitter
 		this.chatbotTwitter = TwitterFactory.getSingleton();
 		this.tweetedWords = new ArrayList<String>();
 		this.searchedTweets = new ArrayList<Status>();
+		this.wordsAndCount = new HashMap<String, Integer>();
 		this.totalWordCount = 0;
 	}
 	
@@ -53,8 +56,53 @@ public class CTECTwitter
 		collectTweets(username);
 		turnStatusesToWords();
 		totalWordCount = tweetedWords.size();
+		String [] boring = createIgnoredWordArray();
+		removeBlanks();
+		trimTheBoringWords(boring);
+		generateWordCount();
+		
+		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
+		
+		String mostCommonWord = sorted.get(0).getKey();
+		int maxWord = 0;
+		
+		maxWord = sorted.get(0).getValue();
+		
+		mostCommon = "The most common word in " + username  + "'s " + searchedTweets.size() + " tweet is " +
+					mostCommonWord + ", and it was used " + maxWord + " times. \nThis is " +
+					(DecimalFormat.getPercentInstance().format(((double) maxWord)/totalWordCount));
+		
 		
 		return mostCommon;
+	}
+	
+	private String sortedWords()
+	{
+		String allWords = "";
+		String [] words = (String []) wordsAndCount.keySet().toArray();
+		for(int index = 0; index < words.length - 1; index++)
+		{
+			int maxIndex = index;
+			
+			for(int inner = index + 1; inner < words.length; inner++)
+			{
+				if (words[inner].compareTo(words[maxIndex]) > 0)
+				{
+					maxIndex = inner;
+				}
+			}
+			
+			String tempMax = words[maxIndex];
+			words[maxIndex] = words[index];
+			words[index] = tempMax;
+		}
+		
+		for (String word : words)
+		{
+			allWords += word + ", ";
+		}
+		
+		return allWords;
 	}
 	
 	private void collectTweets(String username) 
@@ -116,4 +164,50 @@ public class CTECTwitter
 		}
 		return scrubbedString;
 	}
+	
+	private String [] createIgnoredWordArray()
+	{
+		String [] boringWords;
+		String fileText = IOController.loadFromFile(appController, "commonWords.txt");
+		int wordCount = 0;
+		
+		Scanner wordScanner = new Scanner(fileText);
+		
+		while(wordScanner.hasNextLine())
+		{
+			wordScanner.nextLine();
+			wordCount++;
+		}
+		
+		boringWords = new String [wordCount];
+		wordScanner.close();
+		
+		wordScanner = new Scanner(this.getClass().getResourceAsStream("data/commonWords.txt"));
+		for(int index = 0; index < boringWords.length; index++)
+		{
+			boringWords[index] = wordScanner.nextLine();
+		}
+		
+		wordScanner.close();
+		return boringWords;
+	}
+	
+	private void removeBlanks()
+	{
+		for (int index = tweetedWords.size() - 1; index >= 0 ; index --)
+		{
+			if (tweetedWords.get(index).trim().length() == 0)
+			{
+				tweetedWords.remove(index);
+			}
+		}
+	}
+	
+	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
+	{
+		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>;
+		return entries;
+	}
+	
+
 }
