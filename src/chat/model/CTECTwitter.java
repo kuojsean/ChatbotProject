@@ -58,8 +58,8 @@ public class CTECTwitter
 		totalWordCount = tweetedWords.size();
 		String [] boring = createIgnoredWordArray();
 		removeBlanks();
-		trimTheBoringWords(boring);
-		generateWordCount();
+//		trimTheBoringWords(boring);
+//		generateWordCount();
 		
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
@@ -205,9 +205,17 @@ public class CTECTwitter
 	
 	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
 	{
-		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>;
+		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>();
 		return entries;
 	}
+	
+	public String analyzeTwitterForTopic(String topic)
+	{
+		return null;
+	}
+	
+	twitterQuery.setGetoCode(new GeoLocation(latitude, longitude), radius, Query.KILOMETERS);
+	ArrayList<Status> matchingTweets = new ArrayList<Status>();
 	
 
 }
