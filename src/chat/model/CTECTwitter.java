@@ -214,7 +214,7 @@ public class CTECTwitter
 		return null;
 	}
 	
-	twitterQuery.setGetoCode(new GeoLocation(latitude, longitude), radius, Query.KILOMETERS);
+	twitterQuery.setGeoCode(new GeoLocation(latitude, longitude), radius, Query.KILOMETERS);
 	ArrayList<Status> matchingTweets = new ArrayList<Status>();
 	
 
