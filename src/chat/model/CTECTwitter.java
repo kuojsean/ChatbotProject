@@ -58,8 +58,8 @@ public class CTECTwitter
 		totalWordCount = tweetedWords.size();
 		String [] boring = createIgnoredWordArray();
 		removeBlanks();
-//		trimTheBoringWords(boring);
-//		generateWordCount();
+		trimTheBoringWords(boring);
+		generateWordCount();
 		
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
@@ -192,6 +192,21 @@ public class CTECTwitter
 		return boringWords;
 	}
 	
+	private void trimTheBoringWords(String [] boringWords)
+	{
+		for (int index = tweetedWords.size() - 1; index >= 0; index--)
+		{
+			for (int boringIndex = 0; boringIndex < boringWords.length; boringIndex++)
+			{
+				if (tweetedWords.get(index).equals(boringWords[boringIndex]))
+				{
+					tweetedWords.remove(index);
+					boringIndex = boringWords.length;
+				}
+			}
+		}
+	}
+	
 	private void removeBlanks()
 	{
 		for (int index = tweetedWords.size() - 1; index >= 0 ; index --)
@@ -203,19 +218,63 @@ public class CTECTwitter
 		}
 	}
 	
+	private void generateWordCount()
+	{
+		for (String word : tweetedWords)
+		{
+			if (!wordsAndCount.containsKey(word.toLowerCase()))
+			{
+				wordsAndCount.put(word.toLowerCase(), 1);
+			}
+			else
+			{
+				wordsAndCount.replace(word.toLowerCase(), wordsAndCount.get(word.toLowerCase()) + 1);
+			}
+		}
+	}
+	
 	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
 	{
 		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>();
 		return entries;
 	}
 	
-	public String analyzeTwitterForTopic(String topic)
+	public int analyzeTwitter(String search)
 	{
-		return null;
+		double latitude = 100.0;
+		double longitude = 100.0;
+		double radius = 50.0;
+		searchedTweets.clear();
+		Twitter twitter = new TwitterFactory().getInstance();
+		Query twitterQuery = new Query(search);
+		twitterQuery.setGeoCode(new GeoLocation(latitude, longitude), radius, Query.KILOMETERS);
+		ArrayList<Status> matchingTweets = new ArrayList<Status>();
+		QueryResult twitterResult;
+		try
+		{
+			twitterResult = twitter.search(twitterQuery);
+			List<Status> tweets = twitterResult.getTweets();
+			for(Status tweet : tweets)
+			{
+				matchingTweets.add(tweet);
+			}
+			while((twitterQuery = twitterResult.nextQuery()) != null);
+		}
+		catch (TwitterException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+		
+
+
+		return matchingTweets.size();
 	}
 	
-	twitterQuery.setGeoCode(new GeoLocation(latitude, longitude), radius, Query.KILOMETERS);
-	ArrayList<Status> matchingTweets = new ArrayList<Status>();
+
 	
 
 }
